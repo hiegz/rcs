@@ -13,3 +13,5 @@ if(GIT_FOUND)
                 "Couldn't initialize submodules. (${GIT_SUBMODULE_RESULT})")
     endif()
 endif()
+
+add_subdirectory(gtest EXCLUDE_FROM_ALL)
