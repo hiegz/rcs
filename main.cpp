@@ -1,8 +1,10 @@
-#include <iostream>
+#include <rcs/log.hpp>
 
 auto main(int /*argc*/, char ** /*argv*/) -> int {
-    std::cout << CMAKE_PROJECT_NAME << " v"
-              << CMAKE_PROJECT_VERSION << " ["
-              << CMAKE_BUILD_TIMESTAMP << " "
-              << CMAKE_BUILD_TYPE << "]\n";
+    rcsinfo("Running {} v{} [{} {} ({})]",
+            CMAKE_PROJECT_NAME,
+            CMAKE_PROJECT_VERSION,
+            CMAKE_BUILD_TIMESTAMP,
+            CMAKE_BUILD_TYPE,
+            RCS_LOG_SEVERITY);
 }

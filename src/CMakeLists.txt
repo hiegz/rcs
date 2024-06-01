@@ -9,6 +9,7 @@ endif()
 
 add_library(
     ${PROJECT_SOURCELIB} STATIC
+    log/report.cpp
     lib.cpp)
 
 target_compile_options(
