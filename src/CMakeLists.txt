@@ -11,6 +11,10 @@ add_library(
     ${PROJECT_SOURCELIB} STATIC
     log/report.cpp
     system/handle.cpp
+    io/uring/setup.cpp
+    io/uring/enter.cpp
+    io/uring/sqr.cpp
+    io/uring/cqr.cpp
     lib.cpp)
 
 target_compile_options(
