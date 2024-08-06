@@ -11,6 +11,12 @@ class tcp;
 template <typename TInternetProtocol>
 class udp;
 
+template <typename TInternetProtocol>
+class address;
+
+template <typename TInternetProtocol>
+class endpoint;
+
 /// @brief Encapsulates the flags identifying IPv6.
 class v6 final {
   public:
@@ -30,6 +36,13 @@ class v6 final {
 
     /// @brief UDP/IP version 6.
     using udp = rcs::ip::udp<v6>;
+
+  public:
+    /// @brief IP version 6 address.
+    using address = rcs::ip::address<v6>;
+
+    /// @brief IP version 6 endpoint.
+    using endpoint = rcs::ip::endpoint<v6>;
 
   public:
     /// @brief Default constructor.

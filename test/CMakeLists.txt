@@ -21,6 +21,10 @@ set(PROJECT_GTEST ${PROJECT_NAME}-gtest)
 
 add_executable(
     ${PROJECT_GTEST}
+    ip/v4/address.cpp
+    ip/v6/address.cpp
+    ip/v4/endpoint.cpp
+    ip/v6/endpoint.cpp
     test.cpp)
 
 target_compile_options(

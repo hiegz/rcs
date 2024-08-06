@@ -11,6 +11,12 @@ class tcp;
 template <typename TInternetProtocol>
 class udp;
 
+template <typename TInternetProtocol>
+class address;
+
+template <typename TInternetProtocol>
+class endpoint;
+
 /// @brief Encapsulates the flags identifying IPv4.
 class v4 final {
   public:
@@ -30,6 +36,13 @@ class v4 final {
 
     /// @brief UDP/IP version 4.
     using udp = rcs::ip::udp<v4>;
+
+  public:
+    /// @brief IP version 4 address.
+    using address = rcs::ip::address<v4>;
+
+    /// @brief IP version 4 endpoint.
+    using endpoint = rcs::ip::endpoint<v4>;
 
   public:
     /// @brief Default constructor.

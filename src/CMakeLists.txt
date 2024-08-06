@@ -15,6 +15,12 @@ add_library(
     io/uring/enter.cpp
     io/uring/sqr.cpp
     io/uring/cqr.cpp
+    ip/address.cpp
+    ip/v4/address.cpp
+    ip/v6/address.cpp
+    ip/endpoint.cpp
+    ip/v4/endpoint.cpp
+    ip/v6/endpoint.cpp
     lib.cpp)
 
 target_compile_options(
