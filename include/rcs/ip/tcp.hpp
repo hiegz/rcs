@@ -3,7 +3,13 @@
 
 #include <sys/socket.h> // IWYU pragma: keep
 
+#include <rcs/execution/executor.hpp>
+
 namespace rcs::ip {
+
+template <typename TCommunicationProtocol,
+          rcs::execution::executor TExecutorType>
+class socket;
 
 /// @brief Encapsulates the flags identifying TCP/IP.
 template <typename TInternetProtocol>
@@ -26,6 +32,10 @@ class tcp final {
     /// @brief Get the protocol type.
     [[nodiscard]] static constexpr auto type() noexcept
         -> int { return SOCK_STREAM; }
+
+  public:
+    template <typename TExecutorType>
+    using socket = rcs::ip::socket<tcp, TExecutorType>;
 
   public:
     /// @brief Default constructor.
