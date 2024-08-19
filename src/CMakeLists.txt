@@ -1,5 +1,9 @@
 cmake_minimum_required(VERSION 3.20)
 
+if (NOT TARGET nghttp2)
+    message(FATAL_ERROR "nghttp2 target not found")
+endif()
+
 if (NOT DEFINED PROJECT_SOURCELIB)
     set(PROJECT_SOURCELIB ${PROJECT_NAME}-source)
     set(PROJECT_SOURCELIB ${PROJECT_SOURCELIB} PARENT_SCOPE)
@@ -31,6 +35,10 @@ target_include_directories(
     ${PROJECT_SOURCELIB}
     PUBLIC $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/include>
     PUBLIC $<INSTALL_INTERFACE:include>)
+
+target_link_libraries(
+    ${PROJECT_SOURCELIB}
+    PUBLIC nghttp2)
 
 if (DEFINED PROJECT_HEADERS)
     add_dependencies(${PROJECT_SOURCELIB} ${PROJECT_HEADERS})

@@ -14,4 +14,5 @@ if(GIT_FOUND)
     endif()
 endif()
 
+add_subdirectory(nghttp2 EXCLUDE_FROM_ALL)
 add_subdirectory(gtest EXCLUDE_FROM_ALL)

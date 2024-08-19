@@ -1,3 +1,6 @@
 [submodule "extern/gtest"]
 	path = extern/gtest
 	url = https://github.com/google/googletest
+[submodule "extern/nghttp2"]
+	path = extern/nghttp2
+	url = https://github.com/nghttp2/nghttp2
