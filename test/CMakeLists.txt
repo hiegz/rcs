@@ -26,6 +26,7 @@ add_executable(
     ip/v4/endpoint.cpp
     ip/v6/endpoint.cpp
     hex.cpp
+    uri.cpp
     test.cpp)
 
 target_compile_options(
