@@ -46,7 +46,10 @@ if (DEFINED PROJECT_HEADERS)
     add_dependencies(${PROJECT_GTEST} ${PROJECT_HEADERS})
 endif()
 
-gtest_discover_tests(${PROJECT_GTEST})
+gtest_discover_tests(
+    ${PROJECT_GTEST}
+    NO_PRETTY_TYPES
+    NO_PRETTY_VALUES)
 
 if(DEFINED CLANG_TIDY_COMMAND)
     set_property(
