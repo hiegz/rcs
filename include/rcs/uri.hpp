@@ -3,6 +3,7 @@
 
 #include <rcs/lc.hpp>
 
+#include <map>
 #include <string>
 
 namespace rcs {
@@ -22,12 +23,24 @@ class uri final {
     /// @brief Assign from an existing URI.
     auto operator=(uri &&other) -> uri & = default;
 
-  private:
+  public:
     /// @brief Default constructor.
     uri() = default;
 
     /// @brief Destroy resources allocated for a URI.
     ~uri() = default;
+
+  public:
+    /// @brief Parse a given URI string.
+    static auto parse(const std::string &uri) -> rcs::uri;
+
+  public:
+    /// @brief Check if the URI is valid.
+    auto is_valid() const -> bool;
+
+  public:
+    /// @brief Obtain the URI as a string.
+    auto stringify() const -> std::string;
 
   public:
     /// @brief Percent-encode the given URI.
@@ -36,6 +49,19 @@ class uri final {
 
     /// @brief Percent-decode the given URI.
     static auto decode(const std::string &in) -> std::string;
+
+  public:
+    /// @brief ...
+    std::string scheme;
+
+    /// @brief ...
+    std::string host;
+
+    /// @brief ...
+    std::string path = "/";
+
+    /// @brief ...
+    std::map<std::string, std::string> query;
 };
 
 } // namespace rcs
