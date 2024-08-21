@@ -25,6 +25,7 @@ add_library(
     ip/endpoint.cpp
     ip/v4/endpoint.cpp
     ip/v6/endpoint.cpp
+    hex.cpp
     lib.cpp)
 
 target_compile_options(
